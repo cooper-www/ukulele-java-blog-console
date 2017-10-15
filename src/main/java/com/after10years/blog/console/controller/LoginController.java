@@ -1,7 +1,6 @@
 package com.after10years.blog.console.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -9,10 +8,9 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/login")
 public class LoginController {
 
-    @GetMapping({"/",""})
+    @RequestMapping({"/",""})
     public ModelAndView index(){
-        ModelAndView mav = new ModelAndView();
+        ModelAndView mav = new ModelAndView("/login/index");
         return mav;
-
     }
 }

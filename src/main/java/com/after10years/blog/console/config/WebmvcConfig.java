@@ -12,6 +12,7 @@ public class WebmvcConfig extends WebMvcConfigurerAdapter {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new TemplateInterceptor())
                 .addPathPatterns("/**")
+                .excludePathPatterns("/error")
                 .excludePathPatterns("/error/**");
         super.addInterceptors(registry);
     }

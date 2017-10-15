@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 
 public class TemplateInterceptor extends HandlerInterceptorAdapter {
 
-
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
         HandlerMethod hm = (HandlerMethod) handler;
@@ -18,7 +17,6 @@ public class TemplateInterceptor extends HandlerInterceptorAdapter {
             String controllerName = hm.getBeanType().getSimpleName().replace("Controller","").toLowerCase();
             //如果modelAndView对象里边没有viewName则以action名作为模板名
             String actionName = hm.getMethod().getName();
-            System.out.println("sdkjhfsdjihdsf="+controllerName+"/"+actionName);
             modelAndView.setViewName(controllerName+"/"+actionName);
         }
 
